@@ -1,34 +1,46 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container{
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
     width: 100%;
-    height: 100vh;
+    height: auto; 
     background: #d0eaff;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
-.product{
-    width: 90%;
-    min-width: 750px;
+
+.product {
+    width: 100%; 
+    max-width: 750px; 
     display: flex;
+    flex-wrap: wrap;
 }
-.gallery{
+
+.gallery {
     flex-basis: 47%;
     background: #241e20;
     transform: scale(1.08);
     box-shadow: -10px 5px 10px 10px rgba(0, 0, 0, 0.1);
     position: relative;
 }
-.gallery img{
+
+.gallery img {
     width: 100%;
+    height: auto;
     display: block;
-    padding-top: 100px;
 }
-.details{
+
+.details {
     flex-basis: 53%;
     background: #fff;
     padding: 40px;
@@ -38,52 +50,59 @@
     font-weight: 500;
     color: #777;
 }
-.details h1{
+
+.details h1 {
     color: #333;
-    font-size: 35px;
+    font-size: 28px; 
 }
-.details h2{
+
+.details h2 {
     color: #555;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
 }
-.details h3{
+
+.details h3 {
     color: #00d874;
     margin-bottom: 20px;
 }
-.details form{
+
+.details form {
     font-size: 15px;
     font-weight: 400;
 }
-.size-select{
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-}
-.size-select p{
-    width: 70px;
-}
-.size-select input:checked + span{
-    color: blue;
-    font-weight: 600;
-}
-.size-select input{
-    display: none;
-}
-.size-select span{
-    padding: 5px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-.color-select{
+
+.size-select,
+.color-select,
+.quantity-select {
     display: flex;
     align-items: center;
     margin-top: 20px;
 }
-.color-select p{
-    width: 75px;
+
+.size-select p,
+.color-select p,
+.quantity-select p {
+    width: 70px;
 }
-.color-select span{
+
+.size-select input:checked + span {
+    color: blue;
+    font-weight: 600;
+}
+
+.size-select input,
+.color-select input {
+    display: none;
+}
+
+.size-select span {
+    padding: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.color-select span {
     display: inline-block;
     width: 15px;
     height: 15px;
@@ -91,34 +110,29 @@
     margin-right: 15px;
     cursor: pointer;
 }
-.color-1{
+
+.color-1 {
     background: red;
 }
-.color-2{
+
+.color-2 {
     background: #00d874;
 }
-.color-3{
+
+.color-3 {
     background: blue;
 }
-.color-4{
+
+.color-4 {
     background: pink;
 }
-.color-select input{
-    display: none;
-}
-.color-select input:checked + span{
+
+.color-select input:checked + span {
     transform: scale(0.7);
     box-shadow: 0 0 0 4px #fff, 0 0 0 6px #000;
 }
-.quantity-select{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-.quantity-select p{
-    width: 75px;
-}
-.quantity-select input{
+
+.quantity-select input {
     background: #eee;
     border: 0;
     outline: 0;
@@ -126,7 +140,8 @@
     width: 50px;
     border-radius: 12px;
 }
-form button{
+
+form button {
     background: #552ff0;
     color: #fff;
     font-size: 17px;
@@ -139,12 +154,14 @@ form button{
     box-shadow: 0 10px 10px rgba(85, 63, 240, 0.25);
     cursor: pointer;
 }
-.controls{
+
+.controls {
     position: absolute;
     bottom: 40px;
     right: 20px;
 }
-.btn{
+
+.btn {
     display: block;
     width: 10px;
     height: 10px;
@@ -153,6 +170,43 @@ form button{
     margin: 10px;
     cursor: pointer;
 }
-.btn.active{
+
+.btn.active {
     background: #552ff0;
 }
+
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; 
+    }
+    .gallery,
+    .details {
+        flex-basis: 100%;
+        padding: 20px; 
+        margin-top: 20px; 
+    }
+    .details {
+        padding-left: 0; 
+    }
+    .details h1 {
+        font-size: 24px; 
+    }
+    .details h2 {
+        font-size: 20px;
+    }
+    .details h3 {
+        font-size: 16px; 
+    }
+    .responsive-img {
+        max-width: 100%;
+        height: auto;
+    }
+    .controls {
+        bottom: 20px;
+        right: 10px;
+    }
+}
+
+
